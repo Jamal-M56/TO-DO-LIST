@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background: #f0f2f5;
+        }
+
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+        }
+
+        ul {
+            display:hedin;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>تسجيل الدخول</h2>
+        {% if form.errors %}
+        <p class="error">اسم المستخدم أو كلمة المرور غير صحيحة</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">دخول</button>
+        </form>
+        <p style="text-align:center;">ليس لديك حساب؟ <a href="{% url 'signup' %}">سجل هنا</a></p>
+        <p style="text-align:center;">نسيت كلمة المرور؟<a href="{% url 'password_reset' %}">تغيير كلمة المرور</a></p>
+
+    </div>
+</body>
+
+</html>

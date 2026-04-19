@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الخروج</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background: #f0f2f5;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 150px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>تم تسجيل الخروج بنجاح</h2>
+        <p><a href="{% url 'login' %}">تسجيل الدخول مرة أخرى</a></p>
+    </div>
+</body>
+
+</html>
